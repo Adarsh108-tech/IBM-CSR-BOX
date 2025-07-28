@@ -66,7 +66,6 @@ export default function PledgePage() {
 
   return (
     <div className="min-h-screen bg-[#F1F8E9] text-[#1B5E20]">
-      <Navbar />
 
       <div className="max-w-7xl mx-auto p-6 lg:p-8 space-y-8">
         {/* Heading and info */}
