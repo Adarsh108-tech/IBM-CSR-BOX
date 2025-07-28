@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Navbar from "@/components/navbar";
 import Sidebar from "@/components/pledgeSidebar";
 import habits from "./habit.json";
 import { FiGlobe, FiFeather } from "react-icons/fi";
