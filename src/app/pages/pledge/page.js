@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "@/components/navbar"; // Ensure your navbar is imported
+import { useTheme } from "@/context/ThemeContext"; 
+
 
 const pledgeTypes = [
   "Air Pollution",
@@ -59,6 +60,8 @@ export default function PledgePage() {
 
   const todayIndex = getTodayIndex();
 
+  const { theme, toggleTheme } = useTheme(); // ⬅️ Get theme and toggle function
+
   const handleDayClick = (index) => {
     if (index === todayIndex) {
       setSelectedDay(index);
@@ -77,8 +80,7 @@ export default function PledgePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F1F8E9] text-[#1B5E20]">
-      <Navbar />
+    <div className="min-h-screen bg-[#F1F8E9] text-[#1B5E20] dark:bg-gray-900 dark:text-white transition-colors duration-300">
 
       <div className="max-w-5xl mx-auto p-6">
         <h1 className="text-2xl font-bold mb-4">🌍 Make a 21-Day Pledge</h1>
@@ -89,7 +91,7 @@ export default function PledgePage() {
           <select
             value={selectedType}
             onChange={(e) => setSelectedType(e.target.value)}
-            className="p-2 rounded border border-[#B0BEC5] bg-white"
+            className="p-2 rounded border border-[#B0BEC5] bg-white dark:bg-gray-700 dark:text-white"
           >
             {pledgeTypes.map((type) => (
               <option key={type}>{type}</option>
@@ -106,7 +108,7 @@ export default function PledgePage() {
               className={`h-20 flex items-center justify-center rounded-lg border font-medium transition ${
                 index === todayIndex
                   ? "bg-[#2E7D32] text-white hover:bg-[#1B5E20]"
-                  : "bg-white border-[#C8E6C9] text-[#1B5E20] cursor-not-allowed"
+                  : "bg-white dark:bg-gray-700 border-[#C8E6C9] text-[#1B5E20] dark:text-white cursor-not-allowed"
               }`}
               disabled={index !== todayIndex}
             >
@@ -119,12 +121,12 @@ export default function PledgePage() {
       {/* Modal */}
       {selectedDay !== null && (
         <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
-          <div className="bg-white rounded-xl shadow-lg p-6 w-full max-w-md">
-            <h2 className="text-xl font-bold mb-4 text-[#2E7D32]">Today's Task</h2>
-            <p className="mb-4 text-[#37474F]">{getRandomTask()}</p>
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 w-full max-w-md">
+            <h2 className="text-xl font-bold mb-4 text-[#2E7D32] dark:text-green-300">Today's Task</h2>
+            <p className="mb-4 text-[#37474F] dark:text-gray-200">{getRandomTask()}</p>
 
             <div className="mb-4">
-              <label className="flex items-center gap-2 text-[#1B5E20]">
+              <label className="flex items-center gap-2 text-[#1B5E20] dark:text-white">
                 <input
                   type="checkbox"
                   checked={taskCompleted}
