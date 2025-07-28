@@ -1,8 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "@/components/navbar";
-import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
 const COLORS = ["#2E7D32", "#4FC3F7", "#C8E6C9"];
 
@@ -59,22 +65,19 @@ export default function CarbonCalculator() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F1F8E9] text-[#1B5E20]">
-      <Navbar />
-
+    <div className="min-h-screen bg-[#F1F8E9] text-[#1B5E20] dark:bg-gray-900 dark:text-white transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-10">
         {/* Form Section */}
-        <div className="bg-white rounded-lg shadow p-6 border border-[#C8E6C9] space-y-6">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 border border-[#C8E6C9] dark:border-gray-700 space-y-6">
           <h1 className="text-2xl font-bold mb-4">🌍 Carbon Emission Calculator</h1>
 
-          {/* Transport */}
           <div>
             <label className="block mb-1 font-medium">🚗 Transport Mode</label>
             <select
               name="transportMode"
               value={form.transportMode}
               onChange={handleChange}
-              className="w-full border p-2 rounded border-[#B0BEC5]"
+              className="w-full border p-2 rounded border-[#B0BEC5] dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             >
               <option value="car">Car</option>
               <option value="bus">Bus</option>
@@ -90,12 +93,11 @@ export default function CarbonCalculator() {
               name="distance"
               value={form.distance}
               onChange={handleChange}
-              className="w-full border p-2 rounded border-[#B0BEC5]"
+              className="w-full border p-2 rounded border-[#B0BEC5] dark:bg-gray-700 dark:border-gray-600 dark:text-white"
               min="0"
             />
           </div>
 
-          {/* Electricity */}
           <div>
             <label className="block mb-1 font-medium">🏡 Electricity Used (kWh per month)</label>
             <input
@@ -103,19 +105,18 @@ export default function CarbonCalculator() {
               name="electricity"
               value={form.electricity}
               onChange={handleChange}
-              className="w-full border p-2 rounded border-[#B0BEC5]"
+              className="w-full border p-2 rounded border-[#B0BEC5] dark:bg-gray-700 dark:border-gray-600 dark:text-white"
               min="0"
             />
           </div>
 
-          {/* Diet */}
           <div>
             <label className="block mb-1 font-medium">🍽️ Diet Type</label>
             <select
               name="diet"
               value={form.diet}
               onChange={handleChange}
-              className="w-full border p-2 rounded border-[#B0BEC5]"
+              className="w-full border p-2 rounded border-[#B0BEC5] dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             >
               <option value="vegan">Vegan</option>
               <option value="vegetarian">Vegetarian</option>
@@ -124,14 +125,24 @@ export default function CarbonCalculator() {
             </select>
           </div>
 
-          {/* Results */}
-          <div className="pt-6 border-t border-[#C8E6C9]">
-            <h2 className="text-lg font-semibold mb-2 text-[#2E7D32]">Estimated Monthly Emissions:</h2>
+          <div className="pt-6 border-t border-[#C8E6C9] dark:border-gray-700">
+            <h2 className="text-lg font-semibold mb-2 text-[#2E7D32] dark:text-green-300">
+              Estimated Monthly Emissions:
+            </h2>
             <ul className="space-y-1">
-              <li>🚗 Transport: <strong>{emissions.transportEmission.toFixed(2)} kg CO₂</strong></li>
-              <li>⚡ Electricity: <strong>{emissions.electricityEmission.toFixed(2)} kg CO₂</strong></li>
-              <li>🥗 Food: <strong>{emissions.foodEmission.toFixed(2)} kg CO₂</strong></li>
-              <li className="mt-2 text-[#1B5E20] text-xl">
+              <li>
+                🚗 Transport:{" "}
+                <strong>{emissions.transportEmission.toFixed(2)} kg CO₂</strong>
+              </li>
+              <li>
+                ⚡ Electricity:{" "}
+                <strong>{emissions.electricityEmission.toFixed(2)} kg CO₂</strong>
+              </li>
+              <li>
+                🥗 Food:{" "}
+                <strong>{emissions.foodEmission.toFixed(2)} kg CO₂</strong>
+              </li>
+              <li className="mt-2 text-[#1B5E20] dark:text-white text-xl">
                 🌐 <strong>Total: {emissions.totalEmission.toFixed(2)} kg CO₂</strong>
               </li>
             </ul>
@@ -139,8 +150,10 @@ export default function CarbonCalculator() {
         </div>
 
         {/* Chart Section */}
-        <div className="bg-white rounded-lg shadow p-6 border border-[#C8E6C9]">
-          <h2 className="text-xl font-semibold mb-4 text-[#2E7D32]">Emission Breakdown</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 border border-[#C8E6C9] dark:border-gray-700">
+          <h2 className="text-xl font-semibold mb-4 text-[#2E7D32] dark:text-green-300">
+            Emission Breakdown
+          </h2>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
               <Pie
@@ -151,7 +164,10 @@ export default function CarbonCalculator() {
                 label
               >
                 {chartData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={COLORS[index % COLORS.length]}
+                  />
                 ))}
               </Pie>
               <Tooltip />
