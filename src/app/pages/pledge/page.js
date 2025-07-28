@@ -86,7 +86,7 @@ export default function PledgePage() {
               </span>
             </p>
             <p className="text-[#37474F]">
-              Click on any day in the calendar to see your task. You can only complete today's task.
+              Click on any day in the calendar to see your task. You can only complete today&#39;s task.
             </p>
           </div>
         </div>
@@ -147,7 +147,7 @@ export default function PledgePage() {
                   className="form-checkbox h-6 w-6 text-[#2E7D32] rounded-md focus:ring-[#2E7D32]"
                 />
                 <label htmlFor="taskCompleted" className="text-lg text-[#1B5E20] font-medium">
-                  I've completed this task!
+                  I&#39;ve completed this task!
                 </label>
               </div>
             )}

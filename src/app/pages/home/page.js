@@ -105,7 +105,7 @@ export default function HomePage() {
       {/* 🌐 Footer */}
       <footer className="bg-[#C8E6C9] dark:bg-gray-800 p-8 text-center border-t border-[#A5D6A7] dark:border-gray-700 mt-8">
         <div className="text-[#1B5E20] dark:text-white text-lg font-semibold mb-2">
-          🌍 Let's make the world greener — one step at a time.
+          🌍 Let&#39;s make the world greener — one step at a time.
         </div>
         <img
           src="https://i.pinimg.com/originals/f3/7e/bb/f37ebbea1f4318dec775a4d705bd7cca.gif"
