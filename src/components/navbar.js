@@ -21,7 +21,7 @@ export default function Navbar() {
         
         {/* Left - Logo */}
         <div className="flex items-center space-x-2">
-          <Image src="/logo.png" alt="EcoTrack" width={40} height={40} />
+          <Image src="/ecoTrack-circle.png" alt="EcoTrack" width={40} height={40} />
           <span className="text-[#1B5E20] font-bold text-xl">EcoTrack</span>
         </div>
 

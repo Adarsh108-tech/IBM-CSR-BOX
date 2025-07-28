@@ -21,8 +21,7 @@ export default function AuthSection() {
       
       {/* Left Section - Logo & Description */}
       <div className="md:w-1/2 flex flex-col justify-center items-center p-10 text-center bg-[#C8E6C9]">
-        <Image src="/logo.png" alt="Company Logo" width={100} height={100} className="mb-4" />
-        <h1 className="text-3xl font-bold text-[#1B5E20] mb-2">EcoTrack</h1>
+        <Image src="/ecoTrack-complete.png" alt="Company Logo" width={500} height={500} className="mb-4" />
         <p className="text-[#37474F] text-lg max-w-md">
           Track your carbon footprint, reduce emissions, and take action for a greener future. Join us in creating a sustainable world.
         </p>
