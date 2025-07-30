@@ -172,7 +172,7 @@ const learningData = [
         </span>{" "}
         <b>Type:</b> Story
         <br />
-        <b>Summary:</b> Follow a snowflake's journey through a glacier.
+        <b>Summary:</b> Follow a snowflake&#39;s journey through a glacier.
         <br />
         <a
           href="https://kids.nationalgeographic.com/nature/habitats/article/glaciers"
