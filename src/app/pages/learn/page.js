@@ -1105,7 +1105,7 @@ export default function LearnPage() {
                 className="bg-white p-6 rounded shadow space-y-4 min-w-[300px]"
                 onSubmit={handleAddCard}
               >
-                <h2 className="font-bold text-lg mb-2">Add New Card</h2>
+                <h2 className="font-bold text-lg mb-2 text-black">Add New Card</h2>
                 <input
                   type="text"
                   placeholder="Title"
