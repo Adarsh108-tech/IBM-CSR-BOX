@@ -734,7 +734,7 @@ const learningData = [
         </span>{" "}
         <b>Type:</b> Video
         <br />
-        <b>Summary:</b> What makes a city "smart" and green?
+        <b>Summary:</b> What makes a city &quote;smart&quote; and green?
         <br />
         <a
           href="https://www.youtube.com/watch?v=QJ6b0wGgYpA"
